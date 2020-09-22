@@ -1,5 +1,5 @@
-function delay (ms) {
-  return new Promise(resolve => setTimeout(resolve, 200))
+function delay (ms = 200) {
+  return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 export function getAll () {
