@@ -1,21 +1,28 @@
 {
-  "name": "ui",
+  "name": "node-cluster-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.5.2",
+    "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "cluster": "node ./cluster/bin/www",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:4000",
+  "author": "Dmitriy Kiyatkin <info@dkiyatkin.com> (http://dkiyatkin.com)",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -30,5 +37,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.19.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.4",
+    "eslint-plugin-standard": "^4.0.1",
+    "node-sass": "^4.14.1"
   }
 }

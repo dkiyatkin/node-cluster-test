@@ -1,0 +1,42 @@
+root: true
+parser: babel-eslint
+plugins:
+  - node
+  - jest
+extends:
+  - plugin:import/errors
+  - standard
+  - plugin:node/recommended
+rules:
+  no-var: error
+  quote-props: 0
+  dot-notation: 0
+  comma-dangle: 0
+  node/shebang: 0
+  max-lines:
+    - error
+    - 300
+  valid-jsdoc:
+    - error
+    - matchDescription: ".+"
+      requireParamDescription: false
+      requireReturnDescription: false
+  standard/computed-property-even-spacing: 0
+settings:
+  import/resolver:
+    node:
+      moduleDirectory:
+        - node_modules
+        - src
+  node:
+    resolvePaths:
+      - './src'
+env:
+  node: true
+  browser: false
+
+overrides:
+  - files:
+    - '**/*.spec.js'
+    env:
+      jest/globals: true

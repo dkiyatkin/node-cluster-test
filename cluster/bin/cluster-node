@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+console.log(`Start node ${process.pid}`)
+
+function startMaster () {
+  process.send({ cmd: 'data', data: Math.random() })
+  setTimeout(() => {
+    startMaster()
+  }, 3000)
+}
+
+function processData (data) {
+  console.log(`Worker node ${process.pid}:`, data)
+}
+
+process.on('message', (msg) => {
+  if (msg.cmd === 'data') {
+    processData(msg.data)
+  } else if (msg.cmd === 'master') {
+    startMaster()
+  }
+})
